@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>3D旋转图片</title>
+<style>
+    *{
+        margin: 0;padding: 0;
+    }
+    html{
+        font-size: 62.5%;
+    }
+    #carousel{
+        perspective: 1200px;  /*定义 3D 元素距视图的距离,perspective 属性只影响 3D 转换元素*/
+        -webkit-perspective: 1200px; /* Safari 和 Chrome */
+        background-color: #100000;
+        padding-top: 10%;
+        font-size: 0;
+        margin-bottom: 3rem;
+        overflow: hidden;
+    }
+    #spinner{
+        height: 300px;
+        transform-style: preserve-3d; /*保留其 3D 位置*/
+        -webkit-transform-style: preserve-3d;        
+        transform-origin: 50% 50% -500px; /*(x,y,z)位置*/
+        -webkit-transform-origin: 50% 50% -500px;
+        transition: 1s;
+        -webkit-transition: 1s;       /*rotate的过度时间 */
+    }
+    #spinner img{
+        position: absolute;
+        left: 30%;
+        width: 40%;
+        max-width: 425px;
+        height: 280px;        
+        outline: 1px solid transparent; /*border之外的紧贴border的线*/
+        transform-origin: 50% 50% -500px;
+        -webkit-transform-origin: 50% 50% -500px;
+    }
+    /*正数是顺时针旋转,负数是逆时针旋转*/
+    #spinner img:nth-child(1){transform: rotateY(0deg);-webkit-transform: rotateY(0deg);} 
+    #spinner img:nth-child(2){transform: rotateY(-45deg);-webkit-transform: rotateY(-45deg);}
+    #spinner img:nth-child(3){transform: rotateY(-90deg);-webkit-transform: rotateY(-90deg);}
+    #spinner img:nth-child(4){transform: rotateY(-135deg);-webkit-transform: rotateY(-135deg);}
+    #spinner img:nth-child(5){transform: rotateY(-180deg);-webkit-transform: rotateY(-180deg);}
+    #spinner img:nth-child(6){transform: rotateY(-225deg);-webkit-transform: rotateY(-225deg);}
+    #spinner img:nth-child(7){transform: rotateY(-270deg);-webkit-transform: rotateY(-270deg);}
+    #spinner img:nth-child(8){transform: rotateY(-315deg);-webkit-transform: rotateY(-315deg);}
+    span{  /*~ 选择器,作用是查找某一个指定元素的后面的所有兄弟结点*/
+        position: relative;
+        display: inline-block;
+        margin: 5%;
+        margin-top: -6rem;
+        border-bottom: none;        
+        line-height: 0;
+        font-size: 2rem;
+        color: #fff;
+        transition: color .6s;    /*颜色过度*/    
+    }
+    span:hover{
+        color: #888;cursor: pointer;
+    }
+</style>
+
+</head>
+
+<body>
+    <div id="carousel">
+        <figure id="spinner">
+            <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1917280427,3920336884&fm=26&gp=0.jpg" alt="">
+            <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=918435673,1923889249&fm=26&gp=0.jpg" alt="">
+            <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4165043449,2715842553&fm=26&gp=0.jpg" alt="">
+            <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=401967138,750679164&fm=26&gp=0.jpg" alt="">
+            <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=835187673,3615647700&fm=26&gp=0.jpg" alt="">
+            <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=570292981,598149761&fm=26&gp=0.jpg" alt="">
+            <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3290507828,543079662&fm=26&gp=0.jpg" alt="">
+            <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=573325637,454109495&fm=26&gp=0.jpg" alt="">
+        </figure>
+    </div>
+    <span style="float: left;" class="ss-icon" onclick="galleryspin(1)">&lt;</span>
+    <span style="float: right;" class="ss-icon" onclick="galleryspin(0)">&gt;</span>
+
+    <script>
+        var angle = 0;
+        function galleryspin(sign){
+            if(!sign){
+                angle = angle + 45;
+            }else{
+                angle = angle - 45;
+            }
+            spinner.setAttribute("style","-webkit-transform: rotateY("+angle+"deg);-moz-transform: rotateY("+angle+"deg);transform: rotateY("+angle+"deg);");
+        }
+        // setInterval(galleryspin,2000);
+    </script>
+</body>
+</html>

@@ -63,7 +63,11 @@
 </head>
 
 <body>
-    <div class="box">
+   <!-- 1、先确定边长
+        2、确定顶角朝向，顶角所在的border宽度为0，顶角所对的底边宽度为三角形的高
+        3、其余的两边宽度分别是边长的一半
+   -->
+   <div class="box">
         <div class="triangle"></div> <!-- 正三角形，边长100，top边宽度0，bottom宽度为三角形的高即100*sin60° -->
         <div class="triangle"></div> <!-- 正三角形，边长100，left边宽度0，right宽度为三角形的高即100*sin60° -->  
         <div class="triangle"></div> <!-- 正三角形，边长100，bottom边宽度0，top宽度为三角形的高即100*sin60° -->

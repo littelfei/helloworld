@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>css等腰三角形</title>
+<style>
+    *{
+        margin: 0;padding: 0;
+    }
+    .box{
+        width: 900px;
+        height: 200px;
+        margin-left: 10%;
+        margin-top: 10%;
+        border: 1px solid #000;
+    }
+    .triangle:nth-of-type(1){
+        float: left;
+        width: 0;
+        height: 0;
+        margin: 50px 10px;
+        border-top-width: 0;
+        border-left-width: 50px;
+        border-right-width: 50px;
+        border-style: solid;
+        border-color: transparent transparent #f00;
+    }
+    .triangle:nth-of-type(2){
+        float: left;
+        width: 0;
+        height: 0;
+        margin: 50px 100px;
+        border-top-width: 50px;
+        border-left-width: 0;
+        border-bottom-width: 50px;
+        border-style: solid;
+        border-color: transparent #f00 transparent transparent;
+    }
+    .triangle:nth-of-type(3){
+        float: left;
+        width: 0;
+        height: 0;
+        margin: 50px 10px;
+        border-left-width: 50px;
+        border-right-width: 50px;
+        border-bottom-width: 0;
+        border-style: solid;
+        border-color: #f00 transparent transparent;
+    }
+    .triangle:nth-of-type(4){
+        float: left;
+        width: 0;height: 0;
+        margin: 50px 120px;
+        border-top-width: 50px;
+        border-right-width: 0;
+        border-bottom-width: 50px;
+        border-style: solid;
+        border-color: transparent transparent transparent #f00;
+    }
+    
+</style>
+
+</head>
+
+<body>
+    <div class="box">
+        <div class="triangle"></div> <!-- 正三角形，边长100，top边宽度0，bottom宽度为三角形的高即100*sin60° -->
+        <div class="triangle"></div> <!-- 正三角形，边长100，left边宽度0，right宽度为三角形的高即100*sin60° -->  
+        <div class="triangle"></div> <!-- 正三角形，边长100，bottom边宽度0，top宽度为三角形的高即100*sin60° -->
+        <div class="triangle"></div> <!-- 正三角形，边长100，right边宽度0，left宽度为三角形的高即100*sin60° -->
+    </div>
+
+    <script>
+        var x = 0;
+        x = 100*Math.sin(Math.PI/3);
+
+        var Btri = document.getElementsByClassName("triangle");
+        
+        Btri[0].style.borderBottomWidth = x + "px";
+        Btri[1].style.borderRightWidth = x + "px";
+        Btri[2].style.borderTopWidth = x + "px";
+        Btri[3].style.borderLeftWidth = x +"px";
+    </script>
+</body>
+</html>

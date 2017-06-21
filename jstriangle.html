@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>document</title>
+<style>
+    *{
+        margin: 0;padding: 0;
+    }
+    .box{
+        width: 900px;
+        height: 200px;
+        margin-left: 10%;
+        margin-top: 10%;
+        border: 1px solid #000;
+    }
+    
+    
+</style>
+
+</head>
+
+<body>
+    <div class="box">
+        <div class="triangle" style="float: left;margin: 30px 50px;line-height: 10px;"></div>
+        <div class="triangle" style="float: left;margin: 30px 50px;line-height: 10px;"></div>
+    </div>
+
+    <script>
+        var tri = document.getElementsByClassName("triangle");
+        var r = 10; //设置行数
+
+        for (var j = 0; j < r; j++) {      //顶角在下
+            for (var k = 0; k < j; k++) {
+                tri[0].innerHTML += "&nbsp;";
+            }
+            for (var i = 2*r-2-j*2; i >= 0; i--) {                
+                tri[0].innerHTML += "*";
+            }
+            tri[0].innerHTML = tri[0].innerHTML + "<br />";
+        }
+
+        for (var j = r-1; j >=0; j--) {   //顶角在上
+            for (var k = 0; k < j; k++) {
+                tri[1].innerHTML += "&nbsp;";
+            }
+            for (var i = 2*r-2-j*2; i >= 0; i--) {                
+                tri[1].innerHTML += "*";
+            }
+            tri[1].innerHTML = tri[1].innerHTML + "<br />";
+        }
+        
+    </script>
+</body>
+</html>

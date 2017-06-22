@@ -111,6 +111,7 @@
         }
 
         //用sch.onblur无效，div不支持focus和blur事件，加了tabindex也没效果。why？？
+        //var sch = document.getElementsByClassName("search")[0]; 
         var oUl = document.getElementsByTagName("ul")[0];        
         //FireFox的event只有target属性没有srcElement属性，所以需要判断。FF下event.srcElement为undefined。
         //IE下document.onclick无效，document.body.onclick有效。why？？其他浏览器document.onclick有效

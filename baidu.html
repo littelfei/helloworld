@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>仿百度搜索</title>
+<title>document</title>
 <style>
     *{
         margin: 0;padding: 0;
@@ -98,18 +98,22 @@
             var oScript = document.createElement("script");
             oScript.src = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=" + oInput.value + "&cb=xiaofei";
             document.body.appendChild(oScript); 
-            console.log("1111");
         }
 
         oInput.onkeyup = createScript;
         oInput.onmousedown = createScript;
 
+        //点击“百度一下”按钮跳转
+        var oBtn = document.getElementsByClassName("btn")[0];
+        oBtn.onclick = function(){
+            window.open('https://www.baidu.com/s?wd='+ oInput.value);
+        }
+
         //用sch.onblur无效，div不支持focus和blur事件，加了tabindex也没效果。why？？
-        var oUl = document.getElementsByTagName("ul")[0];
-        var sch = document.getElementsByClassName("search")[0];
+        var oUl = document.getElementsByTagName("ul")[0];        
         //FireFox的event只有target属性没有srcElement属性，所以需要判断。FF下event.srcElement为undefined。
         //IE下document.onclick无效，document.body.onclick有效。why？？其他浏览器document.onclick有效
-
+        
         document.body.onclick = function(event){
             var srcObj = event.srcElement ? event.srcElement : event.target; 
             if(srcObj==oUl||srcObj==oInput){

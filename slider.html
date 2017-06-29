@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		ul{list-style: none;}
+		.slider{
+			position: relative;
+			width: 760px;
+			height: 300px;
+			margin: 100px auto;
+		}
+		.pic{
+			position: absolute;
+		}
+		.pic ul li{
+			position: absolute;
+			display: none;
+
+		}
+		.pic ul li.show{
+			display: block;
+		}
+		.pic ul li img{
+			position: absolute;
+			top: 0;left: 0;
+			width: 760px;
+			height: 300px;
+		}
+		.pic ul li .left-img{
+			z-index: 2;
+		}
+		.pic ul li .right-img{
+			z-index: 1;
+		}
+		#sliderList{
+			position: absolute;
+			right: 10px;
+			bottom: 6px;
+			width: 100px;
+			height: 14px;
+			z-index: 3;
+		}
+		#sliderList ul li{
+			float: left;
+			width: 14px;
+			height: 14px;
+			margin-left: 6px;
+			border: 1px solid #fff;
+			box-sizing: border-box;
+		}
+		#sliderList ul li.on{			
+			border: 0;
+			background-color: #ff7300;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="slider">
+		<div class="pic" id="pic">
+			<ul>
+				<li class="show" style="background: url('https://cbu01.alicdn.com/img/back_ibank/2017/138/665/3566831_96354.jpg_.webp') no-repeat;width: 760px;height: 300px;">
+					<img class="left-img" src="https://cbu01.alicdn.com/cms/upload/2017/222/915/3519222_1445273301.png_.webp" alt="">
+					<img class="right-img" src="https://cbu01.alicdn.com/cms/upload/2017/612/135/3531216_1445273301.png_.webp" alt="">
+				</li>
+				<li style="background: url('https://cbu01.alicdn.com/img/back_ibank/2017/062/875/3578260_96354.jpg_.webp') no-repeat;width: 760px;height: 300px;">
+					<img class="left-img" src="https://cbu01.alicdn.com/img/back_ibank/2017/121/195/3591121_96354.jpg_.webp" alt="">
+					<img class="right-img" src="https://cbu01.alicdn.com/img/back_ibank/2017/702/285/3582207_96354.jpg_.webp" alt="">
+				</li>
+				<li style="background: url('https://cbu01.alicdn.com/img/back_ibank/2017/912/206/3602219_96354.jpg_.webp') no-repeat;width: 760px;height: 300px;">
+					<img class="left-img" src="https://cbu01.alicdn.com/cms/upload/2017/623/135/3531326_1611623208.png_.webp" alt="">
+					<img class="right-img" src="https://cbu01.alicdn.com/cms/upload/2017/333/325/3523333_1611623208.png_.webp" alt="">
+				</li>
+				<li style="background: url('https://cbu01.alicdn.com/img/back_ibank/2017/761/016/3610167_96354.jpg_.webp') no-repeat;width: 760px;height: 300px;">
+					<img class="left-img" src="https://cbu01.alicdn.com/cms/upload/2017/012/906/3609210_3709402.png_.webp" alt="">
+					<img class="right-img" src="https://cbu01.alicdn.com/cms/upload/2017/002/416/3614200_3709402.png_.webp" alt="">
+				</li>
+				<li style="background: url('https://cbu01.alicdn.com/img/back_ibank/2017/661/016/3610166_96354.jpg_.webp') no-repeat;width: 760px;height: 300px;">
+					<img class="left-img" src="https://cbu01.alicdn.com/cms/upload/2017/591/595/3595195_1600523308.png_.webp" alt="">
+					<img class="right-img" src="https://cbu01.alicdn.com/img/back_ibank/2017/302/806/3608203_96354.jpg_.webp" alt="">
+				</li>
+			</ul>
+		</div>
+		<div id="sliderList">
+			<ul>
+				<li ></li>
+				<li class="on"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<script>
+		$("#sliderList li").click(function(){
+			var index = $(this).index();  //获取当前点击按钮的下标
+			changeClass(index);
+		});
+
+		//hover() 方法规定当鼠标指针悬停在被选元素上时要运行的两个函数.
+		//鼠标悬停图片上时执行clearInterval，鼠标离开时执行autoPlay
+		/*相当于
+		$(".slider").mouseover(function(){
+			clearInterval(timer);  
+		}).mouseout(autoPlay);*/
+
+		$(".slider").hover(function(){
+			clearInterval(timer);  //关闭定时器，图片轮播停止
+		},autoPlay);
+		
+		var timer = null;
+		function autoPlay(){   //图片轮播
+			timer = setInterval(function(){
+				var len = $("#sliderList li").length;			
+				var i = $("#sliderList li.on").index();
+				var index = i+1;
+				if(index == len) index = 0;
+				changeClass(index);
+			},2000);
+		}
+		autoPlay();
+		
+
+		function changeClass(n){ //根据下标改变图片和按钮的class
+			$("#pic li").eq(n).addClass("show").siblings().removeClass("show");
+			$("#sliderList li").eq(n).addClass("on").siblings().removeClass("on");			
+		}
+	</script>
+</body>
+</html>

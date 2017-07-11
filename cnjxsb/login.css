@@ -1,0 +1,114 @@
+.m.login{
+	position: relative;
+	height: 270px;
+	background-color: #fff;
+}
+.login_bg{
+	position: absolute;
+	top: 50%;
+	margin-top: -73px;
+	width: 980px;
+	height: 146px;
+	background-color: #2D92DA;
+}
+.login_body{
+	position: absolute;
+}
+.login_l{
+	float: left;
+	width: 300px;
+	margin-left: 20px;
+	margin-top: 35px;
+	font-size: 0;
+}
+.log_content{
+	height: 146px;
+	background: url(img/login_b.gif);
+}
+.log_content dt{
+	padding: 10px 0;
+	font-size: 12px;
+	color: #666;
+	text-align: center;
+}
+.log_content dl dd{
+	width: 300px;
+	margin-bottom: 10px;
+	padding: 0 20px;
+}
+.log_content dl dd select{
+	width: 70px;
+	margin-left: 10px;
+}
+.log_content dl dd .user,.log_content dl dd .pass{
+	width: 145px;
+	margin-left: 10px;
+}
+.log_content dl dd .txt_pass{
+	display: block;
+	float: left;
+	width: 70px;
+	margin-left: 10px;
+	font-size: 12px;
+	text-align: right;
+}
+.log_content dl dd .chk{
+	font-size: 12px;
+	vertical-align: middle;
+}
+.log_content dl dd .remember,.log_content dl dd .goto{
+	vertical-align: middle;
+	margin-right: 2px;
+}
+.log_content dl dd .remember{
+	margin-left: 94px;
+}
+.log_content dl dd .goto{
+	margin-left: 10px;
+}
+.log_content dl dd .btn{
+	padding: 1px 8px;
+	margin-left: 90px;
+}
+.log_content dl dd .forget{
+	margin-left: 10px;
+	font-size: 12px;
+}
+.log_content dl dd .forget a:hover{
+	color: #ff6600;
+}
+.log_footer{
+	height: 20px;
+	background: url(img/login_f.gif);
+}
+.login_m{
+	float: left;
+	width: 350px;
+	height: 146px;
+	margin-left: 20px;
+	margin-top: 62px;
+	background-color: #fff;
+}
+.login_r{
+	float: left;
+	width: 260px;
+	height: 146px;
+	margin-top: 62px;
+	margin-left: 20px;
+	padding: 20px 10px;
+	box-sizing: border-box;
+}
+.login_r span{
+	color: #fff;
+	font-size: 12px;
+	line-height: 20px;
+}
+.login_r input{
+	margin-top: 20px;
+	padding: 0 5px;
+	line-height: 25px;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	background-color: #f8b003;
+}

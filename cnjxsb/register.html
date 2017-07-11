@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="register.css">
+</head>
+<body>
+	<div class="head">
+		<div class="head_m">
+			<div class="head_l">
+				<ul>
+					<li><a href="javascript:void(0);" onclick="AddFavorite('收藏本页','http://www.cnjxsb.com/')">收藏本页</a></li>
+					<li><img src="img/ico_mobile.gif" alt=""><a href="http://www.cnjxsb.com/mobile/mobile.php">手机版</a></li>
+					<li><img src="img/ico_qrcode.gif" alt=""><a href="">二维码</a></li>
+					<li><a href="http://hao.gl115.com">网站导航</a></li>
+				</ul>
+			</div>
+			<div class="head_r">
+				<ul>
+					<li>欢迎，<span>客人</span> |</li>
+					<li><a href="login.html">请登陆</a> |</li>
+					<li><a href="register.html">免费注册</a> |</li>
+					<li><a href="http://www.cnjxsb.com/member/send.php">忘记密码?</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="m top">
+		<div class="logo">
+			<a href="index.html">
+				<img src="img/logo.gif" alt="中国机械设备网">
+			</a>
+		</div>
+		<form action="http://www.cnjxsb.com/sell/search.php">
+			<div class="search">
+				<div>
+					<input type="text" class="search_i">
+					<input type="text" class="search_m" onclick="this.blur()" value="供应">
+					<input type="submit" value="" class="search_s">
+				</div>
+			</div>
+		</form>		
+		<div class="search_kw">			
+			<a href="#"><strong>标王</strong></a>
+			<a href="#"><strong>热搜：</strong></a>
+			<span id="d_word">	
+				<a href="#">打包机</a>
+				<a href="#">制罐</a>
+				<a href="#">工业吸尘器</a>
+				<a href="#">联轴器</a>
+				<a href="#">铆接机</a>
+				<a href="#">自动化设备</a>
+				<a href="#">LAPPKABEL</a>
+				<a href="#">除尘器</a>
+			</span>
+		</div>
+	</div>
+	<div class="m nav">
+		<div class="menu">
+			<ul>
+				<li class="menuon"><a href="#">首页</a></li>
+				<li><a href="">供应</a></li>
+				<li><a href="">公司</a></li>
+				<li><a href="">新闻</a></li>
+				<li><a href="">商城</a></li>
+				<li><a href="">求购</a></li>
+				<li><a href="">行情</a></li>
+				<li><a href="">团购</a></li>
+				<li><a href="">展会</a></li>
+				<li><a href="">招商</a></li>
+				<li><a href="">品牌</a></li>
+				<li><a href="">人才</a></li>
+				<li><a href="">图库</a></li>
+				<li><a href="">视频</a></li>
+				<li><a href="">论坛</a></li>
+				<li><a href="">电视</a></li>
+				<li><a href="">商圈</a></li>
+				<li><a href="">国联商务网</a></li>
+			</ul>
+		</div>
+		<div class="nav_center">
+			<ul>
+				<li><a href="">新闻</a></li>
+				<li><a href="">网页</a></li>
+				<li><a href="">问答</a></li>
+				<li><a href="">视频</a></li>
+				<li><a href="">图片</a></li>
+				<li><a href="">音乐</a></li>
+				<li><a href="">微信</a></li>
+				<li><a href="">地图</a></li>
+				<li><a href="">小说</a></li>
+				<li><a href="">电影</a></li>
+				<li>
+					<form action="">
+						<input type="text">
+						<input type="submit" class="nav_btn" value="搜索一下">
+					</form>
+				</li>
+			</ul>
+		</div>
+		<div class="nav_other">
+			<ul>
+				<li><a href="">O2O</a></li>
+				<li><a href="">抢购</a></li>
+				<li><a href="">活动</a></li>
+				<li><a href="">外卖</a></li>
+				<li><a href="">小区</a></li>
+				<li><a href="">预约</a></li>
+				<li><a href="">交友</a></li>
+				<li><a href="">房屋</a></li>
+				<li><a href="">贴吧</a></li>
+				<li><a href="">游戏</a></li>
+				<li><a href="">机械设备</a></li>
+				<li><a href="">车票查询</a></li>
+				<li><a href="">家用电器</a></li>
+				<li><a href="">情趣用品</a></li>
+				<li><a href="">微信导航</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="m register">
+		<div class="tab_head">
+			<div class="tab_head_l title">
+				当前位置: <a href="index.html">首页</a> » <a href="register.html">会员注册</a>
+			</div>
+		</div>
+		<!-- <div class="tab_body"> -->
+		<form action="register.html" method="post" onsubmit="return check();">
+			<div class="instruction">
+				<p class="first">» 已经是会员？<a href="login.html">请点这里登录</a>  » 忘记了密码？<a href="">请点这里找回</a> </p>
+				<p class="second">请认真、仔细地填写以下信息，严肃的商业信息有助于您获得别人的信任，结交潜在的商业伙伴，获取商业机会！*为必填项</p>
+			</div>
+			<div class="main">
+				<p>帐户信息</p>
+				<dl>
+					<dt>会员类型 <span class="f_red">*</span></dt>
+					<dd>
+						<input type="radio" name="regid" id="comp">
+						<label for="comp">企业会员</label>
+
+						<input type="radio" name="regid" id="personal">
+						<label for="personal">个人会员</label>
+					</dd>
+					
+				</dl>
+				<dl onmouseover="mover('tusername')" onmouseout="mout('tusername')">
+					<dt>会员名 <span class="f_red">*</span></dt>
+					<dd><input type="text" name="username" id="username" onblur="validator('username')" autocomplete="off"></dd>
+					<dd>
+						<div class="tips" id="tusername">
+							<div>4-20个字符，只能使用小写字母(a-z)、数字(0-9)、下划线(_)、中划线(-)，且以字母或数字开头和结尾</div>
+						</div>
+						<span id="dusername" class="f_red"></span>
+					</dd>
+				</dl>
+				<dl onmouseover="mover('tpassword')" onmouseout="mout('tpassword')">
+					<dt>登录密码 <span class="f_red">*</span></dt>
+					<dd><input type="password" name="password" id="password" onblur="validator('password')" autocomplete="off"></dd>
+					<dd>
+						<div class="tips" id="tpassword">
+							<div>6-20个字符，区分大小写，推荐使用数字、字母和特殊符号组合</div>
+						</div>
+						<span id="dpassword" class="f_red"></span>
+					</dd>
+				</dl>
+				<dl onmouseover="mover('trepass')" onmouseout="mout('trepass')">
+					<dt>重复输入 <span class="f_red">*</span></dt>
+					<dd><input type="password" name="repass" id="repass" onblur="validator('repass')" autocomplete="off"></dd>
+					<dd>
+						<div class="tips" id="trepass">
+							<div>请再输入一遍上面填写的密码</div>
+						</div>
+						<span id="drepass" class="f_red"></span>
+					</dd>
+				</dl>
+				<p>联系方式</p>
+				<dl onmouseover="mover('tname')" onmouseout="mout('tname')">
+					<dt>真实姓名 <span class="f_red">*</span></dt>
+					<dd>
+						<input type="text" name="name" id="name" onblur="validator('name')" autocomplete="off">
+
+						<input type="radio" name="regid" id="male">
+						<label for="male">先生</label>
+
+						<input type="radio" name="regid" id="female">
+						<label for="female">女士</label>
+					</dd>
+					<dd>
+						<div class="tips" id="tname">
+							<div>请与有效身份证件上的姓名保持一致</div>
+						</div>
+						<span id="dname" class="f_red"></span>
+					</dd>
+				</dl>
+				<dl>
+					<dt>所在地区 <span class="f_red">*</span></dt>
+					<dd>
+						<select name="area" id="areaid">
+							<option value="">请选择</option>
+						</select>
+					</dd>
+				</dl>
+				<dl onmouseover="mover('temail')" onmouseout="mout('temail')">
+					<dt>电子邮箱 <span class="f_red">*</span></dt>
+					<dd><input type="email" name="email" id="email" onblur="validator('email')" autocomplete="off"></dd>
+					<dd>
+						<div class="tips" id="temail">
+							<div>请使用常用常用邮箱(Email)地址，地址不会被公开且可用于登录网站</div>
+						</div>
+						<span id="demail" class="f_red"></span>
+					</dd>
+				</dl>
+				<dl onmouseover="mover('tmobile')" onmouseout="mout('tmobile')">
+					<dt>手机号码&nbsp;</dt>
+					<dd><input type="text" name="mobile" id="mobile"></dd>
+					<dd>
+						<div class="tips" id="tmobile">
+							<div>推荐填写，以便直接与您取得联系<br>号码可用于登录网站和接收本站短信</div>
+						</div>
+						<span id="dmobile" class="f_red"></span>
+					</dd>
+				</dl>
+				<dl onmouseover="mover('tqq')" onmouseout="mout('tqq')">
+					<dt>QQ号码&nbsp;</dt>
+					<dd><input type="text" name="qq" id="qq"></dd>
+					<dd>
+						<div class="tips" id="tqq">
+							<div>推荐填写，以便即时在线与您取得联系</div>
+						</div>
+						<span id="dqq" class="f_red"></span>
+					</dd>
+				</dl>
+				<p>公司信息</p>
+				<dl onmouseover="mover('tcompany')" onmouseout="mout('tcompany')">
+					<dt>公司名称 <span class="f_red">*</span></dt>
+					<dd><input type="text" name="company" id="company" onblur="validator('company')" autocomplete="off"></dd>
+					<dd>
+						<div class="tips" id="tcompany">
+							<div>请填写公司全称，与营业执照保持一致，注册之后将不可更改</div>
+						</div>
+						<span id="dcompany" class="f_red"></span>
+					</dd>
+				</dl>
+				<dl onmouseover="mover('tcmptype')" onmouseout="mout('tcmptype')">
+					<dt>公司类型 <span class="f_red">*</span></dt>
+					<dd>
+						<select name="cmptype" id="cmptype">
+							<option value="">请选择</option>
+						</select>
+					</dd>
+					<dd>
+						<div class="tips" id="tcmptype">
+							<div>如果没有匹配的类型，请选择其它</div>
+						</div>
+						<span id="dcmptype" class="f_red"></span>
+					</dd>
+				</dl>
+				<dl onmouseover="mover('ttelephone')" onmouseout="mout('ttelephone')">
+					<dt>公司电话 <span class="f_red">*</span></dt>
+					<dd><input type="text" name="telephone" id="telephone" onblur="validator('telephone')" autocomplete="off"></dd>
+					<dd>
+						<div class="tips" id="ttelephone">
+							<div>国内用户请加区号，国外用户请加国家码<br>格式范例：86-010-88889999</div>
+						</div>
+						<span id="dtelephone" class="f_red"></span>
+					</dd>
+				</dl>
+				<dl onmouseover="mover('tcaptcha')" onmouseout="mout('tcaptcha')">
+					<dt>验证码 <span class="f_red">*</span></dt>
+					<dd>
+						<input type="text" name="captcha" id="captcha" value="点击显示" onfocus="showcaptcha()">
+						<img src="http://www.linyivip.com/api/captcha.png.php?action=image" alt="" title="验证码,看不清楚?请点击刷新 字母不区分大小写" id="captchapng" onclick="reloadcaptcha()">
+					</dd>
+					<dd>
+						<div class="tips" id="tcaptcha">
+							<div>请把图形中的字符填写到输入框中<br>如果看不清楚，请点击图片刷新</div>
+						</div>
+						<span id="dcaptcha" class="f_red"></span>
+					</dd>
+				</dl>
+				<dl>
+					<dt>&nbsp;</dt>
+					<dd>
+						<input type="checkbox" name="checkbox" id="chk">
+						<a href="http://www.linyivip.com/member/register.php?read=1">我已阅读并同意服务条款</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>&nbsp;</dt>
+					<dd>
+						<input type="submit" name="submit" id="btn" value="立即注册">
+					</dd>
+				</dl>
+			</div>
+		</form>	
+		<!-- </div> -->
+	</div>
+	<div class="m footer">
+		<div class="foot_page">
+			<a href="http://www.cnjxsb.com/">网站首页</a> |
+			<a href="http://www.cnjxsb.com/">关于我们</a> |
+			<a href="http://www.cnjxsb.com/">联系方式</a> |
+			<a href="http://www.cnjxsb.com/">使用协议</a> |
+			<a href="http://www.cnjxsb.com/">版权隐私</a> |
+			<a href="http://www.cnjxsb.com/">网站地图</a> |
+			<a href="http://www.cnjxsb.com/">排名推广</a> |
+			<a href="http://www.cnjxsb.com/">广告服务</a> |
+			<a href="http://www.cnjxsb.com/">积分换礼</a> |
+			<a href="http://www.cnjxsb.com/">网站留言</a> |
+			<a href="http://www.cnjxsb.com/">RSS订阅</a> |
+			<a href="http://www.cnjxsb.com/">湘ICP备10024545号-3</a>
+		</div>
+		<p><strong>免责声明：</strong>以上所展示的信息由企业自行提供，内容的真实性、准确性和合法性由发布企业负责。中国机械设备网对此不承担任何责任。</p>
+		<p><strong>友情提醒：</strong>为规避购买风险，建议您在购买相关产品前务必确认供应商资质及产品质量。</p>
+		<p>(c)2015-2016 CNJXSB B2B SYSTEM All Rights Reserved</p>
+		<p><a href="http://www.cnjxsb.com/">Powered by中国机械设备网</a><a href="http://www.cnzz.com/stat/website.php?web_id=4148209" target="_blank"><img src="http://icon.cnzz.com/img/pic.gif" alt=""></a></p>
+		<p><img src="http://gl35.cn/foot.gif" alt="国联商务网行业图标"></p>
+	</div>
+	
+	<script>
+		function dtrim(id) { //消除空白字符
+			var str = Dd(id).value.trim();
+			if(Dd(id).value != str) Dd(id).value = str;
+		}
+		function validator(id){ //检测输入的字符是否有效
+			dtrim(id);
+
+			if(id == 'username'){				
+				if(Dd(id).value == ''){
+					err_msg(' 请填写会员登录名',id);
+					return false;
+				}
+				if(Dd(id).value.length < 4 || Dd(id).value.length > 20){
+					err_msg(' 会员登录名长度应在4-20之间',id);
+					return false;
+				}
+				if(!Dd(id).value.match(/^[0-9a-z][a-z0-9_\-]*[0-9a-z]$/)){
+					err_msg(' 会员名应为小写字母(a-z)、数字(0-9)、下划线(_)、中划线(-)组合',id);
+					return false;
+				}
+			}
+			if(id == 'password'){				
+				if(Dd(id).value == ''){
+					err_msg(' 请填写会员登录密码',id);
+					return false;
+				}
+				if(Dd(id).value.length < 6 || Dd(id).value.length > 20){
+					err_msg(' 会员登录密码长度应在6-20之间',id);
+					return false;
+				}
+			}
+			if(id == 'repass'){				
+				if(Dd(id).value != Dd('password').value){
+					err_msg(' 两次输入的密码不一致',id);
+					return false;
+				}
+			}
+			err_msg('',id);
+			
+		}
+		function check(){
+			var id,p;
+
+			id = 'username';
+			if(Dd(id).value == ''){
+				err_msg(' 请填写会员登录名',id);
+				Df(id);
+				return false;
+			}
+			if(Dd(id).innerHTML.indexOf('error') != -1){
+				Df(id);
+				return false;
+			}
+
+			id = 'password';
+			if(Dd(id).value == ''){
+				err_msg(' 请填写会员登录密码',id);
+				Df(id);
+				return false;
+			}
+			if(Dd(id).innerHTML.indexOf('error') != -1){
+				Df(id);
+				return false;
+			}
+			return true;
+		}
+		function Dd(i){
+			return document.getElementById(i);
+		}
+		function Df(i){
+			Dd(i).focus();
+		}
+		function err_msg(str,id){
+			document.getElementById('d'+id).innerHTML = '<img src="img/check_' + (str?'error':'right') + '.gif"  alt="">' + str;
+		}
+		function mover(id){
+			var id = document.getElementById(id);
+			id.style.display = 'block';
+		}
+		function mout(id){
+			var id = document.getElementById(id);
+			id.style.display = 'none';
+		}
+		function showcaptcha(){
+			var captcha = document.getElementById("captcha");
+			var captchapng = document.getElementById("captchapng");
+			captchapng.style.display = "block";
+			captcha.value = "";
+		}
+		function reloadcaptcha(){
+			var captchapng = document.getElementById("captchapng");
+			captchapng.src = "http://www.cnjxsb.com/api/captcha.png.php?action=image&refresh=" + Math.random();
+		}
+
+		function AddFavorite(title,url){
+			try{
+			   window.external.addFavorite(url,title);
+			}
+			catch(e){
+				try{
+				   window.sidebar.addPanel(title,url,"");
+				}
+				catch(e){
+				   alert("抱歉，您所使用的浏览器无法完成此操作。\n\n请使用快捷键Ctrl+D进行添加！");
+				}
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="login.css">
+</head>
+<body>
+	<div class="head">
+		<div class="head_m">
+			<div class="head_l">
+				<ul>
+					<li><a href="javascript:void(0);" onclick="AddFavorite('收藏本页','http://www.cnjxsb.com/')">收藏本页</a></li>
+					<li><img src="img/ico_mobile.gif" alt=""><a href="http://www.cnjxsb.com/mobile/mobile.php">手机版</a></li>
+					<li><img src="img/ico_qrcode.gif" alt=""><a href="">二维码</a></li>
+					<li><a href="http://hao.gl115.com">网站导航</a></li>
+				</ul>
+			</div>
+			<div class="head_r">
+				<ul>
+					<li>欢迎，<span>客人</span> |</li>
+					<li><a href="login.html">请登陆</a> |</li>
+					<li><a href="register.html">免费注册</a> |</li>
+					<li><a href="http://www.cnjxsb.com/member/send.php">忘记密码?</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="m top">
+		<div class="logo">
+			<a href="index.html">
+				<img src="img/logo.gif" alt="中国机械设备网">
+			</a>
+		</div>
+		<form action="http://www.cnjxsb.com/sell/search.php">
+			<div class="search">
+				<div>
+					<input type="text" class="search_i">
+					<input type="text" class="search_m" onclick="this.blur()" value="供应">
+					<input type="submit" value="" class="search_s">
+				</div>
+			</div>
+		</form>		
+		<div class="search_kw">			
+			<a href="#"><strong>标王</strong></a>
+			<a href="#"><strong>热搜：</strong></a>
+			<span id="d_word">	
+				<a href="#">打包机</a>
+				<a href="#">制罐</a>
+				<a href="#">工业吸尘器</a>
+				<a href="#">联轴器</a>
+				<a href="#">铆接机</a>
+				<a href="#">自动化设备</a>
+				<a href="#">LAPPKABEL</a>
+				<a href="#">除尘器</a>
+			</span>
+		</div>
+	</div>
+	<div class="m nav">
+		<div class="menu">
+			<ul>
+				<li class="menuon"><a href="#">首页</a></li>
+				<li><a href="">供应</a></li>
+				<li><a href="">公司</a></li>
+				<li><a href="">新闻</a></li>
+				<li><a href="">商城</a></li>
+				<li><a href="">求购</a></li>
+				<li><a href="">行情</a></li>
+				<li><a href="">团购</a></li>
+				<li><a href="">展会</a></li>
+				<li><a href="">招商</a></li>
+				<li><a href="">品牌</a></li>
+				<li><a href="">人才</a></li>
+				<li><a href="">图库</a></li>
+				<li><a href="">视频</a></li>
+				<li><a href="">论坛</a></li>
+				<li><a href="">电视</a></li>
+				<li><a href="">商圈</a></li>
+				<li><a href="">国联商务网</a></li>
+			</ul>
+		</div>
+		<div class="nav_center">
+			<ul>
+				<li><a href="">新闻</a></li>
+				<li><a href="">网页</a></li>
+				<li><a href="">问答</a></li>
+				<li><a href="">视频</a></li>
+				<li><a href="">图片</a></li>
+				<li><a href="">音乐</a></li>
+				<li><a href="">微信</a></li>
+				<li><a href="">地图</a></li>
+				<li><a href="">小说</a></li>
+				<li><a href="">电影</a></li>
+				<li>
+					<form action="">
+						<input type="text">
+						<input type="submit" class="nav_btn" value="搜索一下">
+					</form>
+				</li>
+			</ul>
+		</div>
+		<div class="nav_other">
+			<ul>
+				<li><a href="">O2O</a></li>
+				<li><a href="">抢购</a></li>
+				<li><a href="">活动</a></li>
+				<li><a href="">外卖</a></li>
+				<li><a href="">小区</a></li>
+				<li><a href="">预约</a></li>
+				<li><a href="">交友</a></li>
+				<li><a href="">房屋</a></li>
+				<li><a href="">贴吧</a></li>
+				<li><a href="">游戏</a></li>
+				<li><a href="">机械设备</a></li>
+				<li><a href="">车票查询</a></li>
+				<li><a href="">家用电器</a></li>
+				<li><a href="">情趣用品</a></li>
+				<li><a href="">微信导航</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="m login">
+		<div class="login_bg"></div>
+		<div class="login_body">
+			<div class="login_l">
+				<div class="log_head">
+					<img src="img/login_h.gif" alt="">
+				</div>
+				<div class="log_content">
+					<dl>
+						<dt>您尚未登录，或者访问了一个需要登录的页面..</dt>
+						<dd>
+							<select name="option" id="option">
+								<option value="username">用户名</option>
+								<option value="passport">昵称</option>
+								<option value="email">Email</option>
+								<option value="mobile">手机号</option>
+								<option value="company">公司名</option>
+								<option value="userid">会员ID</option>
+							</select>
+							<input type="text" name="username" id="username" class="user">
+						</dd>
+						<dd>
+							<span class="txt_pass">密 码：</span><input type="password" name="password" id="password" class="pass">
+						</dd>
+						<dd>
+							<span title="选中后 一月内不用再次登录 网吧或公共计算机请勿选">
+								<input type="checkbox" id="remember" class="remember" name="remember" value="1" checked="checked">
+								<label for="remember" class="chk">记住我</label>
+							</span>	
+							<span title="选中后 将直接进入商务室 不返回登录前的页面">						
+								<input type="checkbox" id="goto" class="goto" name="membercenter" value="1">
+								<label for="goto" class="chk">进入商务室</label>
+							</span>
+						</dd>
+						<dd>
+							<input type="submit" class="btn" name="submit" value="登 录">
+							<span class="forget"><a href="http://www.cnjxsb.com/member/send.php">忘记了密码？</a></span>
+						</dd>
+					</dl>
+				</div>
+				<div class="log_footer"></div>
+			</div>
+			<div class="login_m">
+				<img src="img/login_say.gif" alt="">
+			</div>
+			<div class="login_r">
+				<span>还没有会员账号?</span><br>
+				<span>立即免费注册一个(仅需要大约1分钟)...</span>
+				<input type="button" value=" 立即免费注册 ">
+			</div>
+		</div>			
+	</div>
+	<div class="m footer">
+		<div class="foot_page">
+			<a href="http://www.cnjxsb.com/">网站首页</a> |
+			<a href="http://www.cnjxsb.com/">关于我们</a> |
+			<a href="http://www.cnjxsb.com/">联系方式</a> |
+			<a href="http://www.cnjxsb.com/">使用协议</a> |
+			<a href="http://www.cnjxsb.com/">版权隐私</a> |
+			<a href="http://www.cnjxsb.com/">网站地图</a> |
+			<a href="http://www.cnjxsb.com/">排名推广</a> |
+			<a href="http://www.cnjxsb.com/">广告服务</a> |
+			<a href="http://www.cnjxsb.com/">积分换礼</a> |
+			<a href="http://www.cnjxsb.com/">网站留言</a> |
+			<a href="http://www.cnjxsb.com/">RSS订阅</a> |
+			<a href="http://www.cnjxsb.com/">湘ICP备10024545号-3</a>
+		</div>
+		<p><strong>免责声明：</strong>以上所展示的信息由企业自行提供，内容的真实性、准确性和合法性由发布企业负责。中国机械设备网对此不承担任何责任。</p>
+		<p><strong>友情提醒：</strong>为规避购买风险，建议您在购买相关产品前务必确认供应商资质及产品质量。</p>
+		<p>(c)2015-2016 CNJXSB B2B SYSTEM All Rights Reserved</p>
+		<p><a href="http://www.cnjxsb.com/">Powered by中国机械设备网</a><a href="http://www.cnzz.com/stat/website.php?web_id=4148209" target="_blank"><img src="http://icon.cnzz.com/img/pic.gif" alt=""></a></p>
+		<p><img src="http://gl35.cn/foot.gif" alt="国联商务网行业图标"></p>
+	</div>	
+	<script>		
+		function AddFavorite(title,url){
+			try{
+			   window.external.addFavorite(url,title);
+			}
+			catch(e){
+				try{
+				   window.sidebar.addPanel(title,url,"");
+				}
+				catch(e){
+				   alert("抱歉，您所使用的浏览器无法完成此操作。\n\n请使用快捷键Ctrl+D进行添加！");
+				   }
+				}
+			}
+	</script>
+</body>
+</html>

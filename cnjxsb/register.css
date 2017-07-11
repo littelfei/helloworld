@@ -1,0 +1,121 @@
+.f_red{
+	color: red;
+}
+.m.register{
+	margin-top: 10px;
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+}
+.register .title{
+	font-size: 12px;
+	font-weight: normal;
+}
+.instruction{
+	margin: 20px 40px;
+	padding: 20px;
+	background-color: #fafafa;
+}
+.instruction p{
+	font-size: 12px;
+	color: #666;
+}
+.instruction p.first{
+	margin-bottom: 10px;
+	font-weight: bold;
+	color: #000;
+}
+.instruction p.first a{
+	color: #000079;
+}
+.instruction p.first a:hover{
+	color: #ff6600;
+}
+.main{
+	margin: 10px 80px;
+	font-size: 12px;
+}
+.main p{
+	margin-top: 20px;
+	padding: 10px;
+	border-bottom: 1px solid #d0d0d0;
+	color: #ff6600;
+	font-size: 14px;
+	font-weight: bold;
+}
+.main dl{
+	width: 800px;
+	margin-top: 20px;
+	overflow: hidden;
+}
+.main dl dt{
+	float: left;
+	width: 105px;
+	margin-right: 30px;
+	text-align: right;
+}
+.main dl dd:nth-of-type(1){
+	float: left;
+	margin-right: 10px;
+	width: 200px;
+}
+.main dl dd:nth-of-type(2){
+	float: left;
+	width: 450px;
+}
+.main dl dd .tips{
+	position: absolute;
+	display: none;
+	width: 300px;
+	margin-top: -5px;
+	background: url(img/tips_bg.gif) no-repeat 0 bottom;
+	overflow: hidden;
+	z-index: 1000;
+}
+.main dl dd .tips div{
+	width: 300px;
+	padding: 8px 10px 8px 35px;
+	line-height: 22px;
+	background: url(img/tips_top.gif) no-repeat;
+	box-sizing: border-box;
+}
+
+.f_red img{
+	vertical-align: bottom;
+}
+
+.main dl dd input[type=text],.main dl dd input[type=password],.main dl dd input[type=email]{
+	width: 200px;
+	height: 20px;
+	border: 1px solid #7f9db9;
+}
+.main dl dd input[name=name]{
+	width: 100px;
+}
+.main dl dd input[name=captcha]{
+	float: left;
+	width: 60px;
+	margin-right: 10px;
+}
+.main dl dd #captchapng{
+	float: left;
+	display: none;
+	cursor: pointer;
+}
+.main dl dd a{
+	color: #225588;
+}
+.main dl dd a:hover{
+	color: #ff6600;
+}
+.main dl dd #btn{
+	width: 120px;
+	height: 40px;
+	margin-bottom: 10px;
+	border: 0;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	background-color: #77c019;
+}

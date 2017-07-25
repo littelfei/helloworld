@@ -3,6 +3,6 @@
 
 ### 1、3D旋转图片<br>
 * 主要知识点： `perspective`、 `transform-style`、 `transform-origin`<br>
-* [作品地址](https://littelfei.github.io/helloworld/3drotate.html "悬停显示")<br><br>
+* [作品地址](https://littelfei.github.io/helloworld/3drotate.html)<br><br>
 ![](https://littelfei.github.io/helloworld/image/3drotate.png)
 

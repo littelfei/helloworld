@@ -14,7 +14,7 @@ FireFox的event只有target属性没有srcElement属性，IE下document.onclick�
 ![](https://littelfei.github.io/helloworld/image/cnjxsb.png)<br>
 
 #### 3、仿 cannytop.com 首页 <br>
-* 主要知识点： bootstrap下拉菜单(Dropdown)、owl.carousel.js、bootstrap栅格系统<br>
+* 主要知识点： `bootstrap下拉菜单(Dropdown)`、`owl.carousel.js`、`bootstrap栅格系统`<br>
 * [作品地址](https://littelfei.github.io/helloworld/cannytop/index.html)<br>
 ![](https://littelfei.github.io/helloworld/image/cannytop.png)<br>
 

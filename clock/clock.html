@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简单时钟</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		html{font-size: 100px;}
+		body {font-size: .14rem;}
+		.container{
+			position: relative;
+			width: 3.5rem;
+			height: 3.8rem;
+			margin: 1% auto;
+			border-radius: .05rem;
+			background-color: #d0d0d0;
+		}
+		.clock{
+			position: absolute;
+			top: 50%;
+			left: 50%; 
+			width: 3rem;
+			height: 3rem;
+			border-radius: 3rem;
+			background-color: #fff;
+			-webkit-transform: translate(-50%,-50%);
+			   -moz-transform: translate(-50%,-50%);
+			    -ms-transform: translate(-50%,-50%);
+			     -o-transform: translate(-50%,-50%);
+			        transform: translate(-50%,-50%);
+			background-image: url(clock.jpg);
+			background-position: 50% 50%;  
+			background: #fff url('clock.jpg') no-repeat center;  
+		}
+		.clock:after{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			content: '';
+			width: .15rem;
+			height: .15rem;
+			border-radius: .15rem;
+			background-color: #000;
+			-webkit-transform: translate(-50%,-50%);
+			   -moz-transform: translate(-50%,-50%);
+			    -ms-transform: translate(-50%,-50%);
+			     -o-transform: translate(-50%,-50%);
+			        transform: translate(-50%,-50%);
+			z-index: 10;        
+		}
+		.hours-container{
+			position: absolute;
+			top: 30%;
+			left: 50%;			
+			width: .08rem;
+			height: 20%;
+			margin-left: -0.04rem;
+			background-color: #000;
+			transform-origin: 50% 100%;
+		}
+		.minutes-container{
+			position: absolute;
+			top: 15%;
+			left: 50%;			
+			width: .04rem;
+			height: 35%;
+			margin-left: -0.02rem;
+			background-color: #000;
+			transform-origin: 50% 100%;
+		}
+		.seconds-container{
+			position: absolute;
+			top: 10%;
+			left: 50%;			
+			width: .02rem;
+			height: 50%;
+			margin-left: -0.01rem;
+			background-color: #f00;
+			transform-origin: 50% 80%;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="clock">
+			<div class="hours-container" id="hours"></div>
+			<div class="minutes-container" id="minutes"></div>
+			<div class="seconds-container" id="seconds"></div>
+		</div>
+	</div>
+
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		function draw(){
+			var date = new Date();
+			var nowH = date.getHours();
+			var nowM = date.getMinutes();
+			var nowS = date.getSeconds();
+
+			var rh = nowH*30+30*nowM/60; 
+			console.log(rh-360); 
+
+			$("#hours").css("transform","rotate(" + rh + "deg)");
+			$("#minutes").css("transform","rotate(" + nowM*6 + "deg)");
+			$("#seconds").css("transform","rotate(" + nowS*6 + "deg)");
+
+		}
+		draw();
+		setInterval(draw,1000);
+	</script>
+</body>
+</html>

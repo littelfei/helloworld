@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网页计算器</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		.container{
+			position: relative;
+			width: 460px;height: 520px;
+			margin: 0 auto;
+			padding: 15px;
+			background-color: #ff79bc;
+			border: 5px solid #f96db3;
+		}
+		.show{
+			margin: 10px 10px;
+		}
+		.show-num{
+			width: 100%;
+			height: 60px;
+			padding: 0 15px;
+			border: 1px solid transparent;
+			border-radius: 5px;
+			text-align: right;
+			font-size: 30px;
+			line-height: 60px;
+			-moz-box-sizing: border-box;  
+		    -webkit-box-sizing: border-box; 
+		    -o-box-sizing: border-box; 
+		    -ms-box-sizing: border-box;
+			box-sizing: border-box;
+			overflow: hidden;
+		}
+		.mem{
+			position: absolute;
+			top: 25px;
+			right: 30px;
+			width: 80%;
+			border: 1px solid #fff;
+			text-align: right;
+
+		}
+		.keys{			
+			margin: 30px 22px;
+		}
+		.keys p span{
+			display: inline-block;
+			width: 60px;
+			margin: 15px 8px;
+			height: 15px;
+			padding: 10px;
+			border: 1px solid transparent;
+			border-radius: 5px;
+			text-align: center;
+			background-color: #5b00ae;
+			color: #fff;
+			font-size: 0;
+			box-shadow: 2px 5px 2px #6c6c6c;
+			cursor: pointer;
+		}
+		.keys p span:hover{
+			background-color: #6f00d2;
+		}
+		.keys p span:active{
+			background-color: #6f00d2;
+			box-shadow: -1px -1px 0 #6c6c6c;
+		}
+		.keys .text{
+			font-size: 14px;
+		}
+		.keys .num,.keys .sign{
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.keys .sign.symbol{
+			background-color: #624100;
+		}
+		.keys .sign.symbol:hover{
+			background-color: #825702;
+		}
+		.keys .sign.symbol:active{
+			background-color: #825702;
+			box-shadow: -1px -1px 0 #6c6c6c;
+		}
+		.keys .sign.equal{
+			background-color: #d9b300;
+		}
+		.keys .sign.equal:hover{
+			background-color: #eac202;
+		}
+		.keys .sign.equal:active{
+			background-color: #eac202;
+			box-shadow: -1px -1px 0 #6c6c6c;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="show">
+			<input type="text" class="show-num" id="showNum" readonly="readonly">
+			<input type="text" class="mem" readonly="readonly">
+		</div>
+		<!-- 
+			存储:将当前值存到暂存器
+			存取（MR）：将暂存器的值取出
+		    累存（M+）：把当前值与存储器的暂存值相加，再存入暂存器，注意与"储存"的区别
+		    积存：把当前值与存储器的暂存值相乘，再存入暂存器 
+		    清存(MC)：用于清除存储区中的数值  -->
+		<div class="keys">
+			<p>
+				<span class="text" id="memory" onclick="memory()">存储</span>
+				<span class="text" id="get" onclick="getMem()">存取</span>
+				<span class="text" id="back" onclick="back()">退格</span>
+				<span class="text" id="clearAll" onclick="clearAll()">清屏</span>
+			</p>
+			<p>
+				<span class="text" id="memAnd" onclick="memAnd()">累存</span>
+				<span class="text" id="memMulti" onclick="memMulti()">积存</span>
+				<span class="text" id="clearMemory" onclick="clearMem()">清存</span>
+				<span class="sign symbol" id="divided" onclick="divided()">÷</span>
+			</p>
+			<p>
+				<span class="num" id="7" onclick="getNum(7)">7</span>
+				<span class="num" id="8" onclick="getNum(8)">8</span>
+				<span class="num" id="9" onclick="getNum(9)">9</span>
+				<span class="sign symbol" id="multi" onclick="multiply()">×</span>
+			</p>
+			<p>
+				<span class="num" id="4" onclick="getNum(4)">4</span>
+				<span class="num" id="5" onclick="getNum(5)">5</span>
+				<span class="num" id="6" onclick="getNum(6)">6</span>
+				<span class="sign symbol" id="sub" onclick="substract()">-</span>
+			</p>
+			<p>
+				<span class="num" id="1" onclick="getNum(1)">1</span>
+				<span class="num" id="2" onclick="getNum(2)">2</span>
+				<span class="num" id="3" onclick="getNum(3)">3</span>
+				<span class="sign symbol" id="plus" onclick="add()">+</span>
+			</p>
+			<p>
+				<span class="num" id="0" onclick="getNum(0)">0</span>
+				<span class="sign" id="percent" onclick="remaider()">％</span>
+				<span class="sign" id="point" onclick="point()">.</span>
+				<span class="sign equal" onclick="result()">=</span>
+			</p>
+		</div>
+	</div>
+
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<script>
+		var mem = null; //定义初始存储值
+		var flag = false;
+		function getNum(num){
+			var str = $("#showNum").val();
+			if(flag) str = "";
+			str = str.replace(/^(\+)|^(×)|^(÷)|^(%)/,""); //第一个字符不能是+×÷%
+			str += num;
+
+			$("#showNum").val(str);
+			flag = false;
+		}
+		function checkLastSymbol(){  //检测最后一个字符是否是加减乘除符号，是的话就去掉。
+			flag = false;
+			var s = $("#showNum").val();
+			if(s.lastIndexOf("+")>-1||s.lastIndexOf("-")>-1||s.lastIndexOf("×")>-1||s.lastIndexOf("÷")>-1||s.lastIndexOf("%")>-1){
+				s = s.replace(/(\+)$|(-)$|(×)$|(÷)$|(%)$/,"");
+			}
+			return s;
+		}
+		function add(){  //加
+			var s = checkLastSymbol();
+			$("#showNum").val(s+"+");
+		}
+		function substract(){  //减
+			var s = checkLastSymbol();
+			$("#showNum").val(s+"-");
+		}
+		function multiply(){ //乘
+			var s = checkLastSymbol();
+			$("#showNum").val(s+"×");
+		}
+		function divided(){  //除
+			var s = checkLastSymbol();
+			$("#showNum").val(s+"÷");
+		}
+		function point(){ //小数点
+			var s = $("#showNum").val();
+			if(s.lastIndexOf(".")>-1){
+				s = s.replace(/(\.)$/,"");
+			}
+			$("#showNum").val(s+".");
+			flag = false;
+		}
+		function remaider(){ //取余
+			var s = checkLastSymbol();
+			$("#showNum").val(s+"%");			
+		}
+		function result(){ //=
+			var s = $("#showNum").val();
+			s = s.replace(/×/g,"*");
+			s = s.replace(/÷/g,"/");
+
+			var re = eval(s);
+
+			$("#showNum").val(re);
+			flag = true;
+		}
+		function clearAll(){ //清屏
+			$("#showNum").val("");
+		}
+		function back(){  //退格
+			var s = $("#showNum").val();
+			s = s.substring(0,s.length-1);
+
+			$("#showNum").val(s);
+		}
+		function memory(){ //存储:将当前值存到暂存器
+			var s = $("#showNum").val();
+			s = s.replace(/^(\+)|^(×)|^(÷)|^(%)/,""); 
+			s = s.replace(/(\+)$|(-)$|(×)$|(÷)$|(%)$/,""); 
+			mem = s;
+			$("#showNum").val("");
+			$(".mem").val(s);
+		}
+		function getMem(){ //存取（MR）：将暂存器的值取出
+			$("#showNum").val(mem);
+		}
+		function memAnd(){ //累存（M+）：把当前值与存储器的暂存值相加，再存入暂存器
+			var s = $("#showNum").val();
+			s = mem + "+" + s;
+
+			$(".mem").val(s);
+			s = s.replace(/×/g,"*");
+			s = s.replace(/÷/g,"/");
+
+			var re = eval(s);
+			$("#showNum").val(re);
+
+			mem = re;
+			flag = true;
+		}
+		function memMulti(){ //积存：把当前值与存储器的暂存值相乘，再存入暂存器
+			var s = $("#showNum").val();						
+			if(s.indexOf("+")>-1||s.indexOf("-")>-1){				
+				s = "(" + s + ")";
+			}
+			mem = mem.toString();
+			if(mem.indexOf("+")>-1||mem.indexOf("-")>-1){				
+				mem = "(" + mem + ")";
+			}
+			s = mem + "×" + s;
+			$(".mem").val(s);
+			s = s.replace(/×/g,"*");
+			s = s.replace(/÷/g,"/");
+
+			var re = eval(s);
+			$("#showNum").val(re);
+
+			mem = re;
+			flag = true;
+		}
+		function clearMem(){ //清存
+			mem = null;
+			$(".mem").val("");
+		}
+	</script>
+</body>
+</html>

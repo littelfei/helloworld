@@ -13,4 +13,7 @@ FireFox的event只有target属性没有srcElement属性，IE下document.onclick�
 * [作品地址](https://littelfei.github.io/helloworld/3drotate.html)<br>
 ![](https://littelfei.github.io/helloworld/image/3drotate.png)<br>
 
-
+#### 3、仿中国机械设备网 首页-登录-注册<br>
+* 主要是布局练习，html标签的使用，css编写规范，注册表单验证<br>
+* [作品地址](https://littelfei.github.io/helloworld/cnjxsb/index.html)<br>
+![](https://littelfei.github.io/helloworld/image/cnjxsb.png)<br>

@@ -19,7 +19,7 @@ FireFox的event只有target属性没有srcElement属性，IE下document.onclick�
 ![](https://littelfei.github.io/helloworld/image/cannytop.png)<br>
 
 #### 4、canvas 时钟 <br>
-* 主要知识点：canvas的应用<br>
+* 主要知识点：`canvas`的应用<br>
 * [作品地址](https://littelfei.github.io/helloworld/clock/clock-canvas.html)<br>
 ![](https://littelfei.github.io/helloworld/image/canvas-clock.png)<br>
 
